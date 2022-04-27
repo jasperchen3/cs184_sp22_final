@@ -54,10 +54,49 @@
       project proposal, but are yet to fully complete week 2’s goal of implementing working code. Hence, we updated our timeline to reflect these delays and to ensure we stay
       on track for the project presentation deadline and deliverables deadline.
     </p>
-    <p>
-      Finally, in our Google Slides presentation - as linked above - we included screenshots of some pseudocode and coded ideas to our 2 approaches that we outlined above. Our
-      milestone video, which is shown below, includes our explanation of the approaches we intend to pursue in the remaining part of this project.
-    </p>
+
+    <h3>UIUC Mathematical Model and Key PDF Equations (approach 2)</h3>
+
+    <div align="middle">
+      <table style="width=100%">
+        <tr>
+          <td>
+            <img src="img/model.png" align="middle" width="600px" />    
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="img/medium_equation.png" align="middle" height="50px" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="img/scattering_equation.png" align="middle" height="50px"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="img/reflection_equation.png" align="middle" height="50px"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <h3>Assumptions and Limitations of the UIUC Model:</h3>
+    <ul>
+      <li>Model assumes that the medium is homogeneous (i.e. the same properties throughout the scene).</li>
+      <li>Possible solution for heterogeneous media is to partition the scene into separate spaces and treat each space as homogeneous.</li>
+      <li>Computationally very expensive - at each time step, there is a nonzero probability of scattering, reflecting, or both. With many time steps, scene could possibly take an unacceptably large amount of time to render.</li>
+      <li>The PDFs for scattering and reflecting from slide 2 do not integrate to 1, so we choose to terminate when the PDF returns a value of 0.</li>
+    </ul>
+
+    <h3>Future Direction of the Project</h3>
+    <ul>
+      <li>Possible simplification of calculating Lo if the scene takes too long to render.</li>
+      <li>Possible issues with no terminating conditions, instead leaving the program to terminate based on the PDF.</li>
+      <li>Possible implementation to allow for heterogeneous media instead of assuming uniform fog throughout the scene.</li>
+    </ul>
 
     <br>
 
