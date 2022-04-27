@@ -35,22 +35,85 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
-<br/>
 <h1 align="middle">CS 184 Final Project</h1>
     <h2 align="middle">Ahmed Baqai, Dustin Luong, Ethan Chen, Jasper Chen</h2>
     <h2 align="middle">Title: Rendering Volumetric Scattering due to Airborne Particles</h2>
 
+    <br>
+
     <h2 align="middle"> Milestone Status Report </h2>
     <p>
-      In the project so far, we have read through several research papers that modeled behavior of light through media in a scene mathematically and have
-      attempted to implement those models in code. At this time, we have completed week 1 goals as outlined in our project proposal, but are behind schedule
-      from week 2 due to issues with implementing the code. We have worked starting from the ray tracer implemented in project 3-1, but are encountering difficulties in rendering
-      the scene at the time of the milestone deadline. We will continue to work to implement a preliminary model of media such as fog in our scene, but have other ideas with
-      respect to our final implementation.
+      Our approach to our final project so far has been to carefully lay out our implementation approach before committing ourselves to writing code and rendering results. 
+      Specifically, we’re exploring 2 approaches: an original idea that is based on our existing global illumination approach in project 3-1, and an approach laid out in 
+      research papers we looked at during our project proposal. Both approaches follow the “mathematical function applied to every ray” suggestion that was given to us in 
+      our project proposal feedback. More information about these approaches can be found on our google slides, which is linked <a href="https://docs.google.com/presentation/d/1KoGGzOYlXbLas7l2XrCfNF7aBQHzTMYMDpwsor88J3g/edit?usp=sharing">here</a>.
     </p>
     <p>
-
+      As part of our planning, we have read through several research papers that modeled behavior of light through media in a scene mathematically. From our planning so far, 
+      we’re looking to explore the UIUC paper’s approach to path tracing in a participating medium. Thus, at this time, we have completed week 1 goals as outlined in our original 
+      project proposal, but are yet to fully complete week 2’s goal of implementing working code. Hence, we updated our timeline to reflect these delays and to ensure we stay
+      on track for the project presentation deadline and deliverables deadline.
     </p>
+    <p>
+      Finally, in our Google Slides presentation - as linked above - we included screenshots of some pseudocode and coded ideas to our 2 approaches that we outlined above. Our
+      milestone video, which is shown below, includes our explanation of the approaches we intend to pursue in the remaining part of this project.
+    </p>
+
+    <br>
+
+    <div align="middle">
+      <h2 align="middle"> Milestone Video </h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/liQE0OD5SNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <br>
+
+    <h2 align="middle"> Updated Planned Timeline </h2>
+
+    <div align="middle">
+      <table>
+        <tr>
+          <th>Week Number</th>
+          <th>Tasks, Subtasks</th>
+        </tr>
+        <tr>
+          <td>1 (4/10-4/16)</td>
+          <td> Explore and research the mathematics behind volumetric scattering.</td>
+        </tr>
+        <tr>
+          <td>2 (4/17-4/23) </td>
+          <td> Start implementing conceptual understanding of volumetric scattering to code, pseudocode and other bare bones implementations, building upon project 3-1.
+          </td>
+        </tr>
+        <tr>
+          <td>3 (4/24-4/30)</td>
+          <td> 4/26 - milestones deadline
+            <br>
+            To do items: 
+            <ul>
+              <li> Complete coded implementation of both approaches and select which one is most effective at rendering with airborne particles (media) </li>
+              <li> Render some basic example images - may take a while if the implemented solution is not optimized for efficiency  </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>4 (5/1-5/7)</td>
+          <td> 5/5 - project presentations (dead week, Thursday)
+            <br>
+            To do items:
+            <ul>
+              <li>Optimization: explore ways to make the renders take less time and implement them, including adaptive sampling</li>
+              <li>Produce deliverables for project presentations</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>5 (5/8 - 5/10)</td>
+          <td> 5/10 - final deliverables due (finals week, Tuesday)
+          </td>
+        </tr>
+      </table>
+    </div>
 
     <h2 align="middle"> Resources </h2>
     <p>
