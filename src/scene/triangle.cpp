@@ -22,24 +22,50 @@ Triangle::Triangle(const Mesh *mesh, size_t v1, size_t v2, size_t v3) {
 
 BBox Triangle::get_bbox() const { return bbox; }
 
+Vector3D Triangle::moller_trumbore(const Ray &r) const {
+  Vector3D E_1 = p1 - p3;
+  Vector3D E_2 = p2 - p3;
+  Vector3D S = r.o - p3;
+  Vector3D S_1 = cross(r.d, E_2);
+  Vector3D S_2 = cross(S, E_1);
+  Vector3D t_b1_b2 = 1 / dot(S_1, E_1) * Vector3D(dot(S_2, E_2), dot(S_1, S), dot(S_2, r.d));
+  return t_b1_b2;
+}
+
 bool Triangle::has_intersection(const Ray &r) const {
   // Part 1, Task 3: implement ray-triangle intersection
   // The difference between this function and the next function is that the next
   // function records the "intersection" while this function only tests whether
   // there is a intersection.
 
+  Vector3D t_b1_b2 = moller_trumbore(r);
+  double t = t_b1_b2[0];
+  double b1 = t_b1_b2[1];
+  double b2 = t_b1_b2[2];
+  double b3 = 1 - b1 - b2;
+  
+  return r.min_t <= t && t <= r.max_t && 0 <= b1 && b1 <= 1 && 0 <= b2 && b2 <= 1 && 0 <= b3 && b3 <= 1;
 
-
-  return true;
 }
 
 bool Triangle::intersect(const Ray &r, Intersection *isect) const {
   // Part 1, Task 3:
   // implement ray-triangle intersection. When an intersection takes
   // place, the Intersection data should be updated accordingly
+  Vector3D t_b1_b2 = moller_trumbore(r);
 
-
-
+  double t = t_b1_b2[0];
+  double b1 = t_b1_b2[1];
+  double b2 = t_b1_b2[2];
+  double b3 = 1 - b1 - b2;
+  if (!has_intersection(r)) {
+    return false;
+  }
+  r.max_t = t;
+  isect->t = t;
+  isect->n = b1 * n1 + b2 * n2 + b3 * n3;
+  isect->primitive = this;
+  isect->bsdf = get_bsdf();
   return true;
 }
 

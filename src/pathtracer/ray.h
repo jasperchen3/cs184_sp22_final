@@ -24,6 +24,7 @@ struct Ray {
   Vector3D d;  ///< direction
   mutable double min_t; ///< treat the ray as a segment (ray "begin" at min_t)
   mutable double max_t; ///< treat the ray as a segment (ray "ends" at max_t)
+  bool has_bounced = false;
 
   Vector3D inv_d;  ///< component wise inverse
 

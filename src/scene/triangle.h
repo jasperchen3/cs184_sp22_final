@@ -36,6 +36,15 @@ public:
 
   /**
    * Ray - Triangle intersection.
+   * Helper function for finding Ray - Triangle intersection
+   * \param r ray to run Moller Trumbore Algortihm on
+   * Vector with t, b1, and b2.
+   */
+  Vector3D moller_trumbore(const Ray& r) const;
+
+  
+  /**
+   * Ray - Triangle intersection.
    * Check if the given ray intersects with the triangle, no intersection
    * information is stored.
    * \param r ray to test intersection with
