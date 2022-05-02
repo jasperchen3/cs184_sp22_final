@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(Assignment3)
+project(Final)
 
 #-------------------------------------------------------------------------------
 # Build options
