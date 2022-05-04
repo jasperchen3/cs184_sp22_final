@@ -287,6 +287,30 @@ class EmissionBSDF : public BSDF {
 
 }; // class EmissionBSDF
 
+class VolumetricBSDF : public BSDF{
+ public:
+    VolumetricBSDF() : {}
+
+    Vector3D f(const Vector3D wo, const Vector3D wi);
+    Vector3D sample_f(const Vector3D wo, Vector3D* wi, double* pdf);
+    Vector3D get_emission() const { return Vector3D(); }
+    bool is_delta() const { return true; }
+
+    double pdf_scatter(Vector3D wo);
+    double pdf_reflect(Vector3D wo);
+
+    void render_debugger_node();
+ private:
+    double sigma; //scattering coefficient
+    double k; //extinction coefficient
+
+
+
+
+private:
+
+}; // class VolumetricBSDF
+
 }  // namespace CGL
 
 #endif  // CGL_STATICSCENE_BSDF_H
