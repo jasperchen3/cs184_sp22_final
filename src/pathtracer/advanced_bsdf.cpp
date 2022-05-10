@@ -144,23 +144,6 @@ void GlassBSDF::render_debugger_node()
   }
 }
 
-// Volumetric BSDF //
-Vector3D VolumetricBSDF::f(const Vector3D wo, const Vector3D wi) {
-    return Vector3D();
-}
-
-double VolumetricBSDF::pdf_scatter(Vector3D wo) {
-    return 0.0;
-}
-
-double VolumetricBSDF::pdf_reflect(Vector3D wo) {
-    return 0.0;
-}
-
-Vector3D sample_f(const Vector3D wo, Vector3D* wi, double* pdf){
-    return Vector3D();
-}
-
 void BSDF::reflect(const Vector3D wo, Vector3D* wi) {
 
   // TODO:
